@@ -15,6 +15,12 @@ Math.degrees = function(radians) {
 };
 
 window.onload = function() {
+  if (typeof AudioContext === "undefined") {
+    $('h1').text(":(");
+    $('p').text("This browser is not supported...");
+    $('#author').hide();
+    return;
+  }
   var ctx = new AudioContext();
   var audio = document.getElementById('music');
   audio.crossOrigin = "anonymous";

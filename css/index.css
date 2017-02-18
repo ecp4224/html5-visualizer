@@ -19,7 +19,7 @@ footer {
     text-align: center;
 }
 
-.container {
+.vid{
     margin: 0 auto;
     filter: blur(15px);
     -webkit-filter: blur(15px);
@@ -30,7 +30,7 @@ footer {
     height: 100%;
 }
 
-.container > video {
+.vid > video {
     position: fixed;
     top: 50%;
     left: 50%;
