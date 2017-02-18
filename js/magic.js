@@ -101,6 +101,14 @@ function showAuthor() {
   tooltip.mount();
   tooltip.show();
   
+  target.addEventListener('mouseenter',function(){
+    tooltip.show();
+  });
+
+  target.addEventListener('mouseleave',function(){
+    tooltip.hide();
+  });
+  
   setTimeout(function() {
     tooltip.hide();
     showGithub();
@@ -120,6 +128,14 @@ function showGithub() {
   
   tooltip.mount();
   tooltip.show();
+  
+  target.addEventListener('mouseenter',function(){
+    tooltip.show();
+  });
+
+  target.addEventListener('mouseleave',function(){
+    tooltip.hide();
+  });
   
   setTimeout(function() {
     tooltip.hide();
