@@ -1,0 +1,100 @@
+body {
+    margin: 0 auto;
+    font-family: 'Unica One', cursive;
+    color: white;
+}
+
+html, body {
+    height: 100%;
+}
+
+footer {
+    font-family: 'Kanit', sans-serif;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+    filter: blur(15px);
+    -webkit-filter: blur(15px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    width: 100%;
+    height: 100%;
+}
+
+.container > video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translate(-50%, -50%);
+}
+
+.bars > h1 {
+    text-align: center;
+    font-size: 6vw;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.bars {
+    position: absolute;
+    display: table;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    height: 46%;
+    margin-left: -25%;
+    margin-top: -15%;
+}
+
+.bar {
+    float: right;
+    transform-origin: top;
+    background-color: #fdfdfd;
+    max-width: 2px;
+    min-width: 2px;
+    width: auto;
+    height: 15px;
+    position: absolute;
+    top: 0px;
+}
+
+.no-interact {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#author {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 15px;
+    left: 40px;
+    background-position: center;
+    background-image: url(../img/author.jpg);
+}
+
+#github {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 15px;
+    right: 40px;
+}
