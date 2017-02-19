@@ -50,6 +50,7 @@ function createBars() {
     var centerX = Math.floor(window.innerWidth/4);
     var centerY = Math.floor(window.innerHeight/4);
     radius = window.innerWidth / 8;
+    centerY = centerY - (radius / 8);
     
     for (var i = 0; i < 360 / intensity; i++) {
         var e = $("<div class='bar no-interact'></div>");
@@ -76,6 +77,7 @@ function renderFrame() {
     var centerY = Math.floor(window.innerHeight/4);
     
     radius = window.innerWidth / 8;
+    centerY = centerY - (radius / 8);
     
     for (var i = start; i < (360 / intensity) + start; i++) {
         var value = frequencyData[i];
