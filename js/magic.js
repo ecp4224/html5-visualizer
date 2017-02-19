@@ -4,6 +4,7 @@ var frequencyData;
 var analyser;
 var start = 0;
 var songs = [0, 144, 250, 345, 444, 511, 603, 671, 808, 977];
+var audio;
 
 // Converts from degrees to radians.
 Math.radians = function(degrees) {
@@ -23,7 +24,7 @@ window.onload = function() {
     return;
   }
   var ctx = new AudioContext();
-  var audio = document.getElementById('music');
+  audio = document.getElementById('music');
   audio.crossOrigin = "anonymous";
   var audioSrc = ctx.createMediaElementSource(audio);
   analyser = ctx.createAnalyser();
@@ -88,6 +89,8 @@ function renderFrame() {
         
         bar.css({'height': value, 'top': y, 'left': x});
     }
+    
+    $('#author').attr('htef', 'https://www.youtube.com/watch?v=sJISyGCHq-8&t=' + audio.currentTime);
     
     requestAnimationFrame(renderFrame);
 }
