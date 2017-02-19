@@ -46,8 +46,52 @@ footer {
 .bars > h1 {
     text-align: center;
     font-size: 6vw;
-    display: table-cell;
-    vertical-align: middle;
+    display: block;
+    transform-origin: center;
+    transition: all 1.5s;
+}
+
+h1#name.up {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+h1#name.center {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+}
+
+h1#name.down {
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+h1#time.up {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+}
+
+h1#time.center {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+h1#time.down {
+    -webkit-transform: translateY(200%);
+    transform: translateY(200%);
+}
+
+
+.up {
+    opacity: 0;
+}
+
+.center {
+    opacity: 1;
+}
+
+.down {
+    opacity: 0;
 }
 
 .bars {
