@@ -39,8 +39,8 @@ window.onload = function() {
   
   createBars();
   
-  var position = songs[Math.floor(Math.random() * songs.length)];
-  audio.currentTime = position;
+  //var position = songs[Math.floor(Math.random() * songs.length)];
+  //audio.currentTime = position;
   audio.play();
   
   renderFrame();
