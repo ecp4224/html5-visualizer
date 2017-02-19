@@ -3,8 +3,7 @@ var bars = [];
 var frequencyData;
 var analyser;
 var start = 0;
-var songs = [0, 144, 250, 345, 444, 511, 603, 671, 808, 977];
-var audio;
+var intensity = 0.5;
 
 // Converts from degrees to radians.
 Math.radians = function(degrees) {
@@ -24,7 +23,7 @@ window.onload = function() {
     return;
   }
   var ctx = new AudioContext();
-  audio = document.getElementById('music');
+  var audio = document.getElementById('music');
   audio.crossOrigin = "anonymous";
   var audioSrc = ctx.createMediaElementSource(audio);
   analyser = ctx.createAnalyser();
@@ -34,13 +33,12 @@ window.onload = function() {
   
   frequencyData = new Uint8Array(analyser.frequencyBinCount);
   
+  intensity = 360 / (analyser.frequencyBinCount / 2);
+  
   gameWidth = $(window).width();
   gameHeight = $(window).height();
   
   createBars();
-  
-  //var position = songs[Math.floor(Math.random() * songs.length)];
-  //audio.currentTime = position;
   audio.play();
   
   renderFrame();
@@ -52,11 +50,11 @@ function createBars() {
     var centerY = Math.floor(window.innerHeight/4);
     radius = window.innerWidth / 8;
     
-    for (var i = 0; i < 360 / 1.5; i++) {
+    for (var i = 0; i < 360 / intensity; i++) {
         var e = $("<div class='bar no-interact'></div>");
         
-        var degree = (i * 1.5) - 90;
-        var rad = Math.radians(i * 1.5);
+        var degree = (i * intensity) - 90;
+        var rad = Math.radians(i * intensity);
         
         var x = (centerX + radius * Math.cos(rad));
         var y = (centerY + radius * Math.sin(rad));
@@ -78,19 +76,17 @@ function renderFrame() {
     
     radius = window.innerWidth / 8;
     
-    for (var i = start; i < (360 / 1.5) + start; i++) {
+    for (var i = start; i < (360 / intensity) + start; i++) {
         var value = frequencyData[i];
         var bar = bars[i - start];
         
-        var rad = Math.radians((i - start) * 1.5);
+        var rad = Math.radians((i - start) * intensity);
         
         var x = (centerX + radius * Math.cos(rad));
         var y = (centerY + radius * Math.sin(rad));
         
         bar.css({'height': value, 'top': y, 'left': x});
     }
-    
-    $('#author').attr('href', 'https://www.youtube.com/watch?v=sJISyGCHq-8&t=' + (audio.currentTime | 0));
     
     requestAnimationFrame(renderFrame);
 }
