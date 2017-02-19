@@ -90,7 +90,7 @@ function renderFrame() {
         bar.css({'height': value, 'top': y, 'left': x});
     }
     
-    $('#author').attr('htef', 'https://www.youtube.com/watch?v=sJISyGCHq-8&t=' + audio.currentTime);
+    $('#author').attr('href', 'https://www.youtube.com/watch?v=sJISyGCHq-8&t=' + audio.currentTime);
     
     requestAnimationFrame(renderFrame);
 }
