@@ -3,6 +3,7 @@ var bars = [];
 var frequencyData;
 var analyser;
 var start = 0;
+var songs = [0, 144, 250, 345, 444, 511, 603, 671, 808, 977];
 
 // Converts from degrees to radians.
 Math.radians = function(degrees) {
@@ -36,7 +37,11 @@ window.onload = function() {
   gameHeight = $(window).height();
   
   createBars();
+  
+  var position = songs[Math.floor(Math.random() * songs.length)];
+  audio.currentTime = position;
   audio.play();
+  
   renderFrame();
   showAuthor();
 };
